@@ -17,7 +17,7 @@ ENTRY_POINTS = {
         # Syntax: category name = path.to.package.containing.widgets
         # Widget category specification can be seen in
         #    orangecontrib/example/widgets/__init__.py
-        'Geo = orangecontrib.geo.widgets',
+        '地图 = orangecontrib.geo.widgets',
     ),
     # Register widget help
     "orange.canvas.help": (

@@ -25,7 +25,7 @@ from orangecontrib.geo.utils import find_lat_lon
 
 
 if QT_VERSION <= 0x050300:
-    raise RuntimeError('Map widget only works with Qt 5.3+')
+    raise RuntimeError('地图智能在Qt 5.3+环境运行')
 
 
 class LeafletMap(WebviewWidget):
@@ -583,18 +583,18 @@ class LeafletMap(WebviewWidget):
 
 
 class OWMap(widget.OWWidget):
-    name = 'Geo Map'
-    description = 'Show data points on a world map.'
+    name = '地图'
+    description = '在地图上显示数据'
     icon = "icons/GeoMap.svg"
     priority = 100
 
     class Inputs:
-        data = Input("Data", Table, default=True)
-        data_subset = Input("Data Subset", Table)
-        learner = Input("Learner", Learner)
+        data = Input("数据", Table, default=True)
+        data_subset = Input("子集", Table)
+        learner = Input("学习器", Learner)
 
     class Outputs:
-        selected_data = Output("Selected Data", Table, default=True)
+        selected_data = Output("选择的数据", Table, default=True)
         annotated_data = Output(ANNOTATED_DATA_SIGNAL_NAME, Table)
 
     replaces = [
@@ -635,7 +635,7 @@ class OWMap(widget.OWWidget):
         learner_error = widget.Msg("Error modelling: {}")
 
     class Warning(widget.OWWidget.Warning):
-        all_nan_slice = widget.Msg('Latitude and/or longitude has no defined values (is all-NaN)')
+        all_nan_slice = widget.Msg('纬度和经度没有正确的数值(is all-NaN)')
 
     UserAdviceMessages = [
         widget.Message(
